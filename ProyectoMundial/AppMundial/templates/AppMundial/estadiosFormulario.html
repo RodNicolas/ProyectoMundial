@@ -1,0 +1,20 @@
+{% extends "AppMundial/padre.html" %}
+{% load static %}
+{% block titulo_de_pagina %} 
+<h1 class="mb-5">Cargar ESTADIO</h1>
+{% endblock %}
+
+{% block contenidoquecambia %}
+<form action="" method="POST">{% csrf_token %}
+
+
+    <table>
+        {{formulario.as_table}}
+    </table>
+
+    <input type="submit" , value="ENVIAR">
+
+</form>   
+
+<h2>{{mensaje}}</h2>
+{% endblock %}
