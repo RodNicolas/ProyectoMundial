@@ -1,0 +1,33 @@
+
+{% extends "AppMundial/padre.html" %}
+{% load static %}
+{% block titulo_de_pagina %} 
+<h1 class="mb-5">Paises por continente</h1>
+<h1 class="mb-5">{{ cont }}</h1>
+{% endblock %}
+
+{% block contenidoquecambia %}
+<h4>Introducir el continente para buscar paises:</h4>
+
+<form action="/AppMundial/buscar2/" method="GET">
+    <input type="text" name="continente" id="continente">
+    <input type="submit" value="BUSCAR">
+</form>
+
+<h2>{{respuesta}}</h2>
+
+{% if paises %}
+<h1>Lista de paises de {{ cont }}</h1>
+<ul>
+{% for pais in paises %}
+    <li> {{pais.nombre}} </li>
+{% endfor %}
+
+
+</ul>
+{% endif %}
+{% endblock %}
+
+
+
+

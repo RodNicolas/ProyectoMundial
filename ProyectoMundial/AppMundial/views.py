@@ -25,7 +25,7 @@ PAIS
 def paisesFormulario(request):
     if request.method =='POST':
         miFormulario=PaisesFormulario(request.POST)
-        if miFormulario.is_valid:
+        if miFormulario.is_valid():
             info=miFormulario.cleaned_data
             nombre=info.get("nombre")
             continente=info.get("continente")
@@ -41,18 +41,34 @@ def paisesFormulario(request):
         return render(request,"AppMundial/paisesFormulario.html",{"formulario":miFormulario})
     return render(request,"AppMundial/paisesFormulario.html")
 
+def busquedaPxC (request):
+    return render(request,"AppMundial/busquedaPxC.html")
+
+def buscar2 (request):
+    
+    if request.GET['continente']:
+        cont=request.GET['continente']
+        paises=Paises.objects.filter(continente=cont)
+
+        return render(request,"AppMundial/busquedaPxC.html",{"paises":paises,"cont":cont})
+
+    else:
+
+        respuesta="No enviaste datos"
+    return render(request, "AppMundial/busquedaPxC.html",{"respuesta":respuesta})
+
 '''
 JUGADOR
 '''
 def jugadoresFormulario(request):
     if request.method =='POST':
         miFormulario=JugadoresFormulario(request.POST)
-        if miFormulario.is_valid:
+        if miFormulario.is_valid():
             info=miFormulario.cleaned_data
             nombre=info.get("nombre")
             apellido=info.get("apellido")
             edad=info.get("edad")
-            pais=info.get("edad")
+            pais=info.get("pais")
             equipo=info.get("equipo")
             jugador = Jugadores(nombre=nombre, apellido=apellido, edad=edad, pais=pais, equipo=equipo)
             jugador.save()
@@ -65,13 +81,29 @@ def jugadoresFormulario(request):
         return render(request,"AppMundial/jugadoresFormulario.html",{"formulario":miFormulario})
     return render(request,"AppMundial/jugadoresFormulario.html")
 
+def busquedaJxP (request):
+    return render(request,"AppMundial/busquedaJxP.html")
+
+def buscar (request):
+    
+    if request.GET['pais']:
+        nacionalidad=request.GET['pais']
+        jugadores=Jugadores.objects.filter(pais=nacionalidad)
+
+        return render(request,"AppMundial/busquedaJxP.html",{"jugadores":jugadores,"nacionalidad":nacionalidad})
+
+    else:
+
+        respuesta="No enviaste datos"
+    return render(request, "AppMundial/busquedaJxP.html",{"respuesta":respuesta})
+
 '''
 ESTADIO
 '''
 def estadiosFormulario(request):
     if request.method =='POST':
         miFormulario=EstadiosFormulario(request.POST)
-        if miFormulario.is_valid:
+        if miFormulario.is_valid():
             info=miFormulario.cleaned_data
             nombre=info.get("nombre")
             capacidad=info.get("capacidad")
@@ -92,7 +124,7 @@ PARTIDOS
 def partidosFormulario(request):
     if request.method =='POST':
         miFormulario=PartidosFormulario(request.POST)
-        if miFormulario.is_valid:
+        if miFormulario.is_valid():
             info=miFormulario.cleaned_data
             instancia=info.get("instancia")
             pais1=info.get("pais1")

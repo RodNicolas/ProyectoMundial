@@ -13,5 +13,9 @@ urlpatterns= [
     path('jugadoresFormulario/', views.jugadoresFormulario, name='jugadoresFormulario'),
     path('estadiosFormulario/', views.estadiosFormulario, name='estadiosFormulario'),
     path('partidosFormulario/', views.partidosFormulario, name='partidosFormulario'),
-    
+    path('busquedaJxP/', views.busquedaJxP, name='busquedaJxP'),
+    path('buscar/', views.buscar),
+    path('busquedaPxC/', views.busquedaPxC, name='busquedaPxC'),
+    path('buscar2/', views.buscar2),
+       
 ]
