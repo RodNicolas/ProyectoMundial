@@ -22,3 +22,4 @@ Entrega intermedia Proyecto Final
   <li>Buscar jugadores por equipo: permite ingresar un equipo y enlistar todos los jugadores de ese equipo</li>
  </ol>
 <p>En cuanto a la navegacion, el proyecto tiene una pagina de inicio y una pagina de contenido por cada clase. Dentro de la pagina de cada clase se observan los botones que llevan tanto a la carga de datos como a las busquedas cuando corresponda. Todos los templates estan heredados de un template padre. <p/>
+<p> Hasta el momento en la base de datos se cargaron todos los paises del Mundial y todos los estadios. Se probó la carga de un partido inventando un resultado. Para probar la clase Jugadores se cargaron algunos jugadores de la seleccion Argentina <p/>
