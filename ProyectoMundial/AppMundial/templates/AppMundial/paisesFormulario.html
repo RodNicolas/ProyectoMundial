@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block contenidoquecambia %}
+<h1>Formulario para cargar PAISES</h1>
+<h4> {{ pais }}, {{ mensaje }} </h4>
 <form action="" method="POST">{% csrf_token %}
 
 
@@ -16,5 +18,4 @@
 
 </form>   
 
-<h2>{{mensaje}}</h2>
 {% endblock %}

@@ -21,5 +21,5 @@ class Partidos (models.Model):
     instancia=models.CharField(max_length=50)
     pais1=models.CharField(max_length=50)
     pais2=models.CharField(max_length=50)
-    resutlado=models.CharField(max_length=10)
+    resultado=models.CharField(max_length=50, null=True)
 
