@@ -13,5 +13,13 @@ urlpatterns= [
     path('jugadoresFormulario/', views.jugadoresFormulario, name='jugadoresFormulario'),
     path('estadiosFormulario/', views.estadiosFormulario, name='estadiosFormulario'),
     path('partidosFormulario/', views.partidosFormulario, name='partidosFormulario'),
-    
+    path('busquedaJxP/', views.busquedaJxP, name='busquedaJxP'),
+    path('buscar/', views.buscar),
+    path('busquedaPxC/', views.busquedaPxC, name='busquedaPxC'),
+    path('buscar2/', views.buscar2),
+    path('busquedaPxG/', views.busquedaPxG, name='busquedaPxG'),
+    path('buscar3/', views.buscar3),
+    path('busquedaJxE/', views.busquedaJxE, name='busquedaJxE'),
+    path('buscar4/', views.buscar4),
+       
 ]

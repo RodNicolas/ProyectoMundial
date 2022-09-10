@@ -1,0 +1,33 @@
+{% extends "AppMundial/padre.html" %}
+{% load static %}
+{% block titulo_de_pagina %} 
+<h1 class="mb-5">Paises por grupo</h1>
+<h1 class="mb-5">{{ grupo }}</h1>
+{% endblock %}
+
+{% block contenidoquecambia %}
+<h4>Introducir el grupo para buscar paises:</h4>
+
+<form action="/AppMundial/buscar3/" method="GET">
+    <input type="text" name="grupo" id="grupo">
+    <input type="submit" value="BUSCAR">
+</form>
+
+<h2>{{ respuesta }}</h2>
+<h2>{{ noencontrado }}</h2>
+
+{% if paises %}
+<h1>Lista de paises del grupo {{ grupo }}</h1>
+<ul>
+{% for pais in paises %}
+    <li> {{pais.nombre}} </li>
+{% endfor %}
+
+
+</ul>
+{% endif %}
+{% endblock %}
+
+
+
+

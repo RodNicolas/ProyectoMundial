@@ -6,4 +6,11 @@
 
 {% block contenidoquecambia %}
 <h1>Contenido de JUGADORES</h1>
+
+<div class="container">
+    <a class="btn btn-outline-secondary btn-sm" href="{% url 'jugadoresFormulario' %}">CARGAR JUGADOR</a>
+    <a class="btn btn-outline-danger btn-sm" href="{% url 'busquedaJxP' %}">BUSCAR JUGADOR POR PAIS</a>
+    <a class="btn btn-outline-danger btn-sm" href="{% url 'busquedaJxE' %}">BUSCAR JUGADOR POR EQUIPO</a>
+</div>
+
 {% endblock %}

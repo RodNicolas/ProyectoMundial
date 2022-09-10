@@ -1,0 +1,35 @@
+
+{% extends "AppMundial/padre.html" %}
+{% load static %}
+{% block titulo_de_pagina %} 
+<h1 class="mb-5">Jugadores por país</h1>
+<h1 class="mb-5">{{ nacionalidad }}</h1>
+{% endblock %}
+
+{% block contenidoquecambia %}
+<h4>Introducir el pais para buscar jugadores:</h4>
+
+<form action="/AppMundial/buscar/" method="GET">
+    <input type="text" name="pais" id="pais">
+    <input type="submit" value="BUSCAR">
+</form>
+
+<h2>{{respuesta}}</h2>
+<h2>{{ noencontrado }}</h2>
+
+{% if jugadores %}
+<h1>Lista de jugadores de {{ nacionalidad }}</h1>
+<ul>
+{% for jugador in jugadores %}
+    <li> {{jugador.apellido}} , {{jugador.nombre}} </li>
+{% endfor %}
+
+
+</ul>
+{% endif %}
+{% endblock %}
+
+
+
+
+

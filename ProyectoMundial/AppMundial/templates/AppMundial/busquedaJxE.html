@@ -1,0 +1,32 @@
+
+{% extends "AppMundial/padre.html" %}
+{% load static %}
+{% block titulo_de_pagina %} 
+<h1 class="mb-5">Jugadores por equipo</h1>
+<h1 class="mb-5">{{ equipo }}</h1>
+{% endblock %}
+
+{% block contenidoquecambia %}
+<h4>Introducir el equipo para buscar jugadores:</h4>
+
+<form action="/AppMundial/buscar4/" method="GET">
+    <input type="text" name="equipo" id="equipo">
+    <input type="submit" value="BUSCAR">
+</form>
+
+<h2>{{respuesta}}</h2>
+<h2>{{ noencontrado }}</h2>
+
+{% if jugadores %}
+<h1>Lista de jugadores de {{ equipo }}</h1>
+<ul>
+{% for jugador in jugadores %}
+    <li> {{jugador.apellido}} , {{jugador.nombre}} </li>
+{% endfor %}
+
+
+</ul>
+{% endif %}
+{% endblock %}
+
+
